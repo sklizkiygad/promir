@@ -6,7 +6,6 @@
 *{
     font-family: 'Trajan Pro 3', serif;
 }
-
 body::-webkit-scrollbar {
     display: none;
 }
@@ -25,14 +24,16 @@ html,body{
     gap: 30px;
     align-items: center;
 }
-
+:root{
+    --second-banner: 220px;
+}
 .logo__icon{
     height: 87px;
     width: 87px;
 }
 
 .banner{
-    height: 80vh;
+    height: calc(100vh - 30px);
 }
 
 .first-banner{
@@ -48,6 +49,10 @@ html,body{
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    opacity: 1;
+    transition: 0.7s;
+    transform: translateY(0);
+
 }
 
 .first-banner__background__block{
@@ -56,9 +61,22 @@ html,body{
     background: radial-gradient(ellipse at top, rgba(252,253,255,1) -2%, rgb(81 192 226) 63%, rgba(9,9,121,1) 110%);
     position: absolute;
     z-index: 2;
+    opacity: 1;
+    transform: translateY(0);
     mix-blend-mode: hard-light;
+    transition: 0.2s ease-out 1s;
 }
 
+.upBack .first-banner__background__block{
+    opacity: 0;
+    transition: 0.3s ease-out;
+    transform: translateY(10px);
+}
+.upBack .first-banner__background{
+    opacity: 0;
+    transition: 1.5s;
+    transform: translateY(-150px);
+}
 .first-banner__title{
     font-style: normal;
     font-weight: 700;
@@ -73,8 +91,7 @@ html,body{
 
 .first-banner__blur{
     position: absolute;
-    right: 125px;
-    width: 600px;
+    right: 0;
     background: rgba(37, 164, 255, 0.1);
     z-index: 5;
     backdrop-filter: blur(16px);
@@ -104,51 +121,71 @@ html,body{
     max-width: 490px;
     color: #FFFFFF;
 }
-
-.second-banner {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+.first-banner__mob-button{
+    display: none;
 }
 
-.second-banner__grass-earth{
+.banner.second-banner {
     position: relative;
+    overflow-y: visible;
+}
+
+.second-banner::after{
+    content: '';
     width: 100%;
-    top: 20%;
+    height: 76px;
+    bottom: var(--second-banner);
+    left: 0;
+    position: absolute;
+    background: rgb(252,253,255);
+    background: linear-gradient(180deg, rgba(252,253,255,0) 0%, rgba(255,255,255,1) 100%);
+    z-index: 100;
 }
 
 .second-banner__grass-earth__earth{
-    width: 100%;
-}
-
-.second-banner__grass-earth__bottle{
     position: absolute;
-    bottom: 35%;
-    left: 40%;
-    z-index: 1;
-    transform: rotate(-11deg);
-    clip-path: inset(0 0 110px 0);
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    bottom: var(--second-banner);
+
 }
 
 .second-banner__grass-earth__grass{
     position: absolute;
-    top : 100px;
-    left: 35%;
+    bottom: calc(var(--second-banner) + 5px);
+    left: 32%;
     z-index: 2;
+    width: 35%;
 }
 
-.second-banner__butt{
-    width: 100%;
+.second-banner__grass-earth__bottle{
+    position: absolute;
+    bottom: calc(var(--second-banner) + 30px);
+    height: 85%;
+    left: 42%;
+    z-index: 1;
+    transform: translateY(30%) rotate(0);
+    transition: 1.5s;
+    clip-path: inset(0 0 300px 0);
+}
+
+.second-banner__grass-earth__bottle.seeBottle{
+    transform: translateY(0) rotate(-11deg);
+    transition: 0.8s linear;
+    clip-path: inset(0 0 100px 0);
+}
+
+.third-banner{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
+    height: var(--second-banner);
+    width: 100%;
 }
-
 
 .main-button{
     border: 1px solid black;
@@ -161,166 +198,276 @@ html,body{
     margin: 20px 0;
 }
 
-
-
-
-.third-banner__divider,
-.fourth-banner__divider{
+.fourth-banner,
+.five-banner
+{
+    height: 100%;
     width: 100%;
-    height: 15vh;
-}
-.third-banner__info,
-.fourth-banner__ref{
-    display: flex;
-    height: 65vh;
-}
-.third-banner__info div,
-.fourth-banner__ref div
-{
-    width: 50vw;
-}
-.third-banner__info__image{
-    background: url('../assets/images/banners/banner4.png') no-repeat;
-    background-size: cover;
-}
-.third-banner__info__text,
-.fourth-banner__ref__text
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #0D4F9F;
-}
-.fourth-banner__ref__text{
-   background: rgba(1,1,1,0);
-}
-.third-banner__info__text p,
-.fourth-banner__ref__text p
-{
-    max-width: 635px;
-    font-style: normal;
-    font-size: 20px;
-    color: #FFFFFF;
-    font-weight: 200;
-}
-
-.third-banner__info__text h3,
-.fourth-banner__ref__text h3
-{
-    font-style: normal;
-    font-weight: 200;
-    font-size: 36px;
-    color: #FFFFFF;
-    max-width: 635px;
-    width: 100%;
-}
-.fourth-banner__ref p,
-.fourth-banner__ref h3
-
-{
-    color: black !important;
-}
-
-.fourth-banner__ref__image{
-    background: url("../assets/images/banners/banner4ref.png") no-repeat;
+    text-align: center;
     background-size: cover;
     position: relative;
 }
 
-.fourth-banner__ref__image__color{
-    background: #0D4F9F;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    mix-blend-mode: color;
+.fourth-banner{
+    background: url("../assets/images/banners/banner4.png") no-repeat;
+    background-size: cover;
 
+}
+.five-banner{
+    background: url("../assets/images/banners/banner4ref.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    backface-visibility: hidden;
 }
 
 
+.fourth-banner__text,
+.five-banner__text
+{
+    /*backdrop-filter: blur(10px);*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.five-banner__text
+{
+    backdrop-filter: brightness(30%);
+}
+
+.fourth-banner__text p,
+.five-banner__text p
+{
+    max-width: 500px;
+}
+
+.five-banner__text
+{
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.five-banner button{
+    padding: 20px;
+    color:white;
+    border:1px solid white;
+}
 
 
+.fourth-banner::before{
+    content:'';
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(252,253,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+
+.fourth-banner__text{
+    opacity: 0.2;
+    transition: 1.5s linear;
+    transform: scale(0.5) ;
+}
+
+.toSee > .fourth-banner__text{
+    transform: scale(1);
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    transition: all 1s ease-out, backdrop-filter 3s ease-out;
+}
+
+
+.fourth-banner::before{
+    transition: 1.5s 0.4s;
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: #000213;
+    width: 100%;
+    height: 100%;
+}
+
+.intoTheDark.fourth-banner::before{
+    transition: 0.3s 0.2s linear;
+    opacity: 1;
+}
+
+
+.five-banner::before{
+    transition: 0.5s linear;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0, 69, 121);
+    background: linear-gradient(0deg, rgba(0,69,121,1) 0%, rgba(0,6,67,1) 100%);
+    width: 100%;
+    height: 0;
+    mix-blend-mode: overlay;
+}
+
+.intoTheDark.five-banner::before{
+    transition: 0.5s 0.5s ease-out;
+    width: 100%;
+    height: 100%;
+}
 
 
 
 footer{
     background: #0D4F9F;
-    padding: 0 180px;
-    height: 20vh;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
     position: fixed;
     bottom: 0;
-    width: calc(100% - 360px);
+    width: calc(100% - 40px);
     z-index: 6;
 }
 
 .myfooter__socials {
-    display: block !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .myfooter__socials h1{
     font-style: normal;
     font-weight: 200;
-    font-size: 36px;
+    font-size: 12px;
     color: #FFFFFF;
 }
 
-.myfooter__contacts h3{
+.myfooter__contacts{
+    display: flex;
+    gap: 10px;
+}
+.header-navbar .myfooter__contacts{
+    display: none;
+}
+.myfooter__contacts a{
     font-style: normal;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 8px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 .myfooter__socials__icons{
     display: flex;
     gap: 15px;
 }
+.myfooter__socials__icons img{
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
 
 header{
     display: flex;
     justify-content: space-between;
-    padding: 15px 200px;
+    padding: 15px 20px;
     align-items: center;
-    width: calc(100% - 400px);
+    width: calc(100% - 40px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
 }
+.logo-cancel{
+    display: none;
+}
 
 header .logo__icon{
-    height: 86px;
-    width: 86px;
+    height: 40px;
+    width: 40px;
 }
 
 header .logo__text{
-    height: 25px;
+    height: 20px;
 }
 
 header a{
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     color: #0D4F9F;
     text-decoration: none;
 }
 
+.burger{
+    height: 20px;
+    width: 30px;
+    position: relative;
+    margin-right: 10px;
+    display: none;
+    z-index: 5;
+}
+
+
+.burger span,
+.burger:before,
+.burger:after
+{
+    height: 3px;
+    width: 100%;
+    background-color: #0d509f;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    transition: transform 0.3s, color 0.2s;
+}
+.burger span{
+    top: calc(50% - 3px/2);
+}
+.burger:after
+{
+    bottom: -1px;
+    content: '';
+}
+
+.burger:before
+{
+    top: -1px;
+    content: '';
+}
+.burger.active span{
+    opacity: 0;
+    background-color: white;
+}
+.burger.active:before{
+    transform: translateY(8px) rotate(45deg);
+    background-color: white;
+}
+.burger.active:after{
+    transform: translateY(-11px) rotate(-45deg);
+    background-color: white;
+}
+
 .stream-block{
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 100px);
+    position: relative;
+    top: 70px;
     overflow: hidden;
 }
 
 .header-navbar{
     display: flex;
     gap: 30px;
+    position: relative;
 }
 
 .stream-frame{
@@ -344,15 +491,14 @@ header a{
 
 .chatbox {
     width: 300px;
-    height: calc(100% - 60px);
-
+    height: calc(100% - 100px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
     position: fixed;
     right: 0;
-    top: 60px;
+    top: 70px;
 }
 .chat-window {
     flex: auto;
