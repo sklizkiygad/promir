@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e47b5ec7.css",
-    "main.js": "/static/js/main.0a2a9955.js",
-    "static/media/firstbanner.png": "/static/media/firstbanner.ad4706ae69fe5e1981ed.png",
-    "static/media/banner2.png": "/static/media/banner2.932e9e5e5ca1f73e74d5.png",
-    "static/media/banner4.png": "/static/media/banner4.5883bd14ed68e9a7561d.png",
-    "static/media/banner4ref.png": "/static/media/banner4ref.deff129539949c22b297.png",
-    "static/media/Trajan.ttf": "/static/media/Trajan.45cb6689c0b3aa21bd31.ttf",
-    "static/media/banner2grass.png": "/static/media/banner2grass.66a09c5a3e9390f3f1d9.png",
-    "static/media/banner2bottle.png": "/static/media/banner2bottle.6d41d531538106d75a7a.png",
-    "index.html": "/index.html",
-    "main.e47b5ec7.css.map": "/static/css/main.e47b5ec7.css.map",
-    "main.0a2a9955.js.map": "/static/js/main.0a2a9955.js.map"
+    "main.css": "/promir/static/css/main.7141a50c.css",
+    "main.js": "/promir/static/js/main.fee34983.js",
+    "static/media/firstbanner.png": "/promir/static/media/firstbanner.ad4706ae69fe5e1981ed.png",
+    "static/media/banner2.png": "/promir/static/media/banner2.932e9e5e5ca1f73e74d5.png",
+    "static/media/banner4.png": "/promir/static/media/banner4.5883bd14ed68e9a7561d.png",
+    "static/media/banner4ref.png": "/promir/static/media/banner4ref.deff129539949c22b297.png",
+    "static/media/Trajan.ttf": "/promir/static/media/Trajan.45cb6689c0b3aa21bd31.ttf",
+    "static/media/banner2grass.png": "/promir/static/media/banner2grass.66a09c5a3e9390f3f1d9.png",
+    "static/media/banner2bottle.png": "/promir/static/media/banner2bottle.6d41d531538106d75a7a.png",
+    "index.html": "/promir/index.html",
+    "main.7141a50c.css.map": "/promir/static/css/main.7141a50c.css.map",
+    "main.fee34983.js.map": "/promir/static/js/main.fee34983.js.map"
   },
   "entrypoints": [
-    "static/css/main.e47b5ec7.css",
-    "static/js/main.0a2a9955.js"
+    "static/css/main.7141a50c.css",
+    "static/js/main.fee34983.js"
   ]
 }
