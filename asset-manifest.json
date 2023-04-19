@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/promir/static/css/main.7141a50c.css",
-    "main.js": "/promir/static/js/main.fee34983.js",
+    "main.js": "/promir/static/js/main.1a1498b5.js",
     "static/media/firstbanner.png": "/promir/static/media/firstbanner.ad4706ae69fe5e1981ed.png",
     "static/media/banner2.png": "/promir/static/media/banner2.932e9e5e5ca1f73e74d5.png",
     "static/media/banner4.png": "/promir/static/media/banner4.5883bd14ed68e9a7561d.png",
@@ -11,10 +11,10 @@
     "static/media/banner2bottle.png": "/promir/static/media/banner2bottle.6d41d531538106d75a7a.png",
     "index.html": "/promir/index.html",
     "main.7141a50c.css.map": "/promir/static/css/main.7141a50c.css.map",
-    "main.fee34983.js.map": "/promir/static/js/main.fee34983.js.map"
+    "main.1a1498b5.js.map": "/promir/static/js/main.1a1498b5.js.map"
   },
   "entrypoints": [
     "static/css/main.7141a50c.css",
-    "static/js/main.fee34983.js"
+    "static/js/main.1a1498b5.js"
   ]
 }
